@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Croissant';
+    src: url('/fonts/Croissant-Light.woff2') format('woff2');
+    font-weight: 300; /* Light */
+}
+
+@font-face {
+    font-family: 'Croissant';
+    src: url('/fonts/Croissant-Bold.woff2') format('woff2');
+    font-weight: 700; /* Bold */
+}
+
+* {
+    font-family: 'Croissant', sans-serif;
+}
+
+@layer components {
+    .text-primary {
+        color: #929852;
+    }
+    
+    .hover\:bg-primary:hover,
+    .bg-primary {
+        background-color: #929852;
+    }
+
+    .hover\:text-primary:hover,
+    .text-secondary {
+        color: #262626;
+    }
+
+    .hover\:bg-secondary:hover,
+    .bg-secondary {
+        background-color: #262626;
+    }
+
+    .border-secondary {
+        border-color: #262626;
+    }
+}
