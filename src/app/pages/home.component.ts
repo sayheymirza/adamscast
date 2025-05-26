@@ -66,7 +66,7 @@ export class HomeComponent {
       const defaultPositions = [
         { top: '15%', left: '15%', transform: `rotate(${Math.random() * 24 - 12}deg)` },        // Top-left
         { top: '5%', right: '5%', transform: `rotate(${Math.random() * 24 - 12}deg)` },       // Top-right
-        { bottom: '15%', left: '15%', transform: `rotate(${Math.random() * 24 - 12}deg)` },     // Bottom-left
+        { bottom: '20%', left: '5%', transform: `rotate(${Math.random() * 24 - 12}deg)` },     // Bottom-left
         { bottom: '15%', right: '15%', transform: `rotate(${Math.random() * 24 - 12}deg)` },    // Bottom-right
         { top: '5%', left: '45%', transform: `rotate(${Math.random() * 24 - 12}deg)` }          // Top-center-ish (adjust as needed)
       ];
