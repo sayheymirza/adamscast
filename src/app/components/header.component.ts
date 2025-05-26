@@ -6,13 +6,14 @@ import { RouterLink } from '@angular/router';
   selector: 'app-header',
   imports: [NgOptimizedImage, RouterLink],
   template: `
-    <nav class="container mx-auto flex items-center justify-between h-20">
-      <a routerLink="/" class="flex flex-nowrap items-center gap-4">
+    <nav class="container mx-auto flex items-center justify-between px-4 h-20">
+      <a routerLink="/" class="flex flex-nowrap items-center gap-4 group">
         <img 
           ngSrc="logo.png" 
           alt="لوگوی آدامس کست" 
           width="85"
           height="85"
+          class="group-hover:-rotate-12 transition-all ease-in-out"
         />
 
         <strong class="text-xl">آدامس کست</strong>

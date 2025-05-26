@@ -1,7 +1,8 @@
+import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { CardEpisodeComponent } from "../components/card-episode.component";
 import { EpisodesService } from '../services/episodes.service';
-import { NgStyle } from '@angular/common';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -18,15 +19,16 @@ import { NgStyle } from '@angular/common';
             [ngStyle]="heroEpisodesStyles[$index]"
           >
             <app-card-episode 
-            [item]="item"
+              [item]="item"
+              class="w-[128px] h-[128px] md:w-[256px] md:h-[256px] transition-all hover:scale-110"
             />
           </div>
         }
 
       <div class="flex flex-col items-center text-center gap-20 z-1">
-        <h1 class="flex flex-col gap-4 whitespace-pre text-6xl md:text-8xl font-bold text-secondary">
+        <h1 class="flex flex-col gap-4 whitespace-pre text-5xl sm:text-6xl md:text-8xl font-bold text-secondary">
           <span>پادکست رو</span>
-          <span class="text-stroke">با هوش مصنوعی</span>
+          <span>با هوش مصنوعی</span>
           <span class="text-primary">مثل آدامس بجو</span>
         </h1>
 
@@ -51,6 +53,7 @@ import { NgStyle } from '@angular/common';
 })
 export class HomeComponent {
   public episodesService = inject(EpisodesService);
+  private seoService = inject(SeoService);
 
   public get heroEpisodes(): any[] {
     // pick last 5 episodes
@@ -62,7 +65,7 @@ export class HomeComponent {
     if (this.heroEpisodesStyles.length !== items.length) {
       const defaultPositions = [
         { top: '15%', left: '15%', transform: `rotate(${Math.random() * 24 - 12}deg)` },        // Top-left
-        { top: '15%', right: '15%', transform: `rotate(${Math.random() * 24 - 12}deg)` },       // Top-right
+        { top: '5%', right: '5%', transform: `rotate(${Math.random() * 24 - 12}deg)` },       // Top-right
         { bottom: '15%', left: '15%', transform: `rotate(${Math.random() * 24 - 12}deg)` },     // Bottom-left
         { bottom: '15%', right: '15%', transform: `rotate(${Math.random() * 24 - 12}deg)` },    // Bottom-right
         { top: '5%', left: '45%', transform: `rotate(${Math.random() * 24 - 12}deg)` }          // Top-center-ish (adjust as needed)
@@ -102,5 +105,24 @@ export class HomeComponent {
         };
       });
     }
+  }
+
+  constructor() {
+    this.seoService.set({
+      title: 'پادکست رو با هوش مصنوعی مثل آدامس بجو',
+      description: 'پادکست رو یک پادکست فارسی است که به بررسی و تحلیل هوش مصنوعی و کاربردهای آن در زندگی روزمره می‌پردازد.',
+      keywords: ['پادکست', 'هوش مصنوعی', 'AI', 'فناوری', 'تکنولوژی', 'NotebookLM'],
+      image: '/logo.png',
+      url: 'https://adamscast.ir',
+      type: 'website',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'پادکست رو با هوش مصنوعی مثل آدامس بجو',
+        description: 'پادکست رو یک پادکست فارسی است که به بررسی و تحلیل هوش مصنوعی و کاربردهای آن در زندگی روزمره می‌پردازد.',
+        image: 'https://adamscast.ir/logo.png',
+        url: 'https://adamscast.ir'
+      }
+    });
   }
 }

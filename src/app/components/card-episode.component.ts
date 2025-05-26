@@ -1,6 +1,6 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { IEpisode } from '../services/episodes.service';
-import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-card-episode',
@@ -9,6 +9,8 @@ import { NgOptimizedImage } from '@angular/common';
     <img 
       ngSrc="{{item().thumbnail}}" alt="{{item().title}}" 
       width="256" height="256"
+      class="w-full h-auto object-cover object-center"
+      priority
     />
   `,
   host: {
