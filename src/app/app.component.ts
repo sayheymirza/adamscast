@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header.component";
 import { FooterComponent } from "./components/footer.component";
 
@@ -13,4 +13,17 @@ import { FooterComponent } from "./components/footer.component";
   `,
 })
 export class AppComponent {
+  private router = inject(Router);
+
+  constructor() {
+    this.router.events.subscribe(event => {
+      // if rotate end scroll to top
+      if (event.constructor.name === 'NavigationEnd') {
+        window.scroll({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
 }

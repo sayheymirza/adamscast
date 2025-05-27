@@ -1,16 +1,17 @@
 import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { CardEpisodeRowComponent } from '../components/card-episode-row.component';
 import { CardEpisodeComponent } from "../components/card-episode.component";
 import { EpisodesService } from '../services/episodes.service';
 import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CardEpisodeComponent, NgStyle],
+  imports: [CardEpisodeComponent, CardEpisodeRowComponent, NgStyle],
   template: `
     <!-- hero section -->
     <section
-      class="w-screen h-[calc(100dvh-56px-80px)] relative flex flex-nowrap items-center justify-center overflow-hidden"
+      class="w-screen min-h-[calc(100dvh-56px-80px)] relative flex flex-nowrap items-center justify-center overflow-hidden"
       (mousemove)="onMouseMove($event)"
     >
         @for (item of heroEpisodes; track $index) {
@@ -49,6 +50,16 @@ import { SeoService } from '../services/seo.service';
         </a>
       </div>
     </section>
+
+    <section class="container mx-auto my-20 px-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-10">آخرین قسمت‌ها</h2>
+
+      @for (item of episodesService.items; track $index) {
+        <app-card-episode-row 
+          [item]="item"
+        />
+      }
+    </section>
   `,
 })
 export class HomeComponent {
@@ -57,9 +68,7 @@ export class HomeComponent {
 
   public get heroEpisodes(): any[] {
     // pick last 5 episodes
-    const items = this.episodesService.items.length < 5 ?
-      this.episodesService.items :
-      this.episodesService.items.slice(this.episodesService.items.length - 5, this.episodesService.items.length);
+    const items = this.episodesService.latest;
 
     // Ensure heroEpisodesStyles has the correct number of elements and set initial positions
     if (this.heroEpisodesStyles.length !== items.length) {
