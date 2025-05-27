@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "serve:ssr:adamscast": "node dist/adamscast/server/server.mjs"
+    "serve:ssr:adamscast": "node dist/adamscast/server/server.mjs",
+    "sitemap": "node scripts/generate-sitemap.js"
   },
   "private": true,
   "dependencies": {
