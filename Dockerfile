@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --force
 COPY . .
+RUN npm run sitemap
 RUN npm run build
 
 # Stage 2: Serve the Angular App with Node.js
