@@ -18,7 +18,7 @@ export class AppComponent {
   constructor() {
     this.router.events.subscribe(event => {
       // if rotate end scroll to top
-      if (event.constructor.name === 'NavigationEnd') {
+      if (event.constructor.name === 'NavigationEnd' && typeof window !== 'undefined') {
         window.scroll({
           top: 0,
           behavior: 'smooth'
