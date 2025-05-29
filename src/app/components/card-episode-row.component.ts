@@ -14,6 +14,10 @@ import { NgOptimizedImage } from '@angular/common';
       routerLink="/episode/{{ item().slug }}"
       class="flex flex-nowrap items-center gap-4 px-4 h-16 relative border-b group"
     >
+          <span class="text-primary text-2xl font-bold">
+            {{item().episode}}
+          </span>
+
           <div class="flex flex-col flex-1 text-sm truncate">
             <strong class="group-hover:text-primary">{{item().title}}</strong>
             <p>{{item().description}}</p>
