@@ -25,5 +25,14 @@
         "thumbnail": "/episodes/3/thumbnail.png",
         "audio": "/episodes/3/audio.m4a",
         "duration": "07:25"
+    },
+    {
+        "slug": "dopamine",
+        "episode": 4,
+        "title": "دنیایی که دوپامین می سازد",
+        "description": "در این اپیزود، به بررسی نقش دوپامین در مغز و تأثیر آن بر رفتارها و احساسات می‌پردازیم. از اعتیاد به تکنولوژی تا لذت‌های روزمره، دوپامین چگونه زندگی ما را شکل می‌دهد؟",
+        "thumbnail": "/episodes/4/thumbnail.png",
+        "audio": "/episodes/4/audio.m4a",
+        "duration": "07:16"
     }
 ]
