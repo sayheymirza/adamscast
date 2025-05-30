@@ -13,6 +13,10 @@ export class EpisodesService {
       this.items.slice(0, 5);
   }
 
+  public last(count: number = 1): IEpisode[] {
+    return this.items.slice(0, count);
+  }
+
   public oneBySlug(slug: string): IEpisode | undefined {
     return this.items.find(item => item.slug === slug);
   }

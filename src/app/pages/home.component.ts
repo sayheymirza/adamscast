@@ -1,13 +1,15 @@
 import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { CardEpisodeRowComponent } from '../components/card-episode-row.component';
 import { CardEpisodeComponent } from "../components/card-episode.component";
+import { SectionInfoComponent } from '../components/section-info.component';
 import { EpisodesService } from '../services/episodes.service';
 import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CardEpisodeComponent, CardEpisodeRowComponent, NgStyle],
+  imports: [CardEpisodeComponent, CardEpisodeRowComponent, SectionInfoComponent, NgStyle, RouterLink],
   template: `
     <!-- hero section -->
     <section
@@ -48,17 +50,33 @@ import { SeoService } from '../services/seo.service';
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M12 24c6.624 0 12-5.376 12-12S18.624 0 12 0 0 5.376 0 12s5.376 12 12 12zm4.872-6.344v.001c-.807 0-3.356-2.828-10.52-1.36-.189.049-.436.126-.576.126-.915 0-1.09-1.369-.106-1.578 3.963-.875 8.013-.798 11.467 1.268.824.526.474 1.543-.265 1.543zm1.303-3.173c-.113-.03-.08.069-.597-.203-3.025-1.79-7.533-2.512-11.545-1.423-.232.063-.358.126-.576.126-1.071 0-1.355-1.611-.188-1.94 4.716-1.325 9.775-.552 13.297 1.543.392.232.547.533.547.953a.938.938 0 0 1-.938.944zM4.548 6.998c4.523-1.324 11.368-.906 15.624 1.578 1.091.629.662 2.22-.498 2.22l-.001-.001c-.252 0-.407-.063-.625-.189C15.605 8.55 9.444 8.057 5.458 9.17c-.175.048-.393.125-.625.125-.639 0-1.127-.499-1.127-1.142 0-.657.407-1.029.842-1.155z"></path></g></svg>
           <strong>شنونده شوید</strong>
         </a>
+
+        <button (click)="scrollToBottom()" role="button" class="group flex flex-col items-center justify-center gap-4 cursor-pointer">
+          <strong class="relative top-0 transition-all group-hover:scale-125 group-hover:top-20">
+            یکم بیا <span class="inline-block text-primary transition-all relative top-1 rotate-12 group-hover:top-0 group-hover:rotate-0">پایین</span> تر
+          </strong>
+
+          <svg class=" animate-bounce" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z"/></svg>
+        </button>
       </div>
     </section>
+
+    <app-section-info class="container mx-auto my-20 px-10" />
 
     <section class="container mx-auto my-20 px-10">
       <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-10">آخرین قسمت‌ها</h2>
 
-      @for (item of episodesService.items; track $index) {
+      @for (item of episodesService.last(10); track $index) {
         <app-card-episode-row 
           [item]="item"
         />
       }
+
+      <a routerLink="/episodes" class="text-primary group text-center flex items-center justify-center gap-4 mt-10">
+        <strong class="transition-all rotate-12 scale-105 group-hover:rotate-0 group-hover:scale-100">مشاهده</strong>
+        <strong class="transition-all rotate-6 scale-150 group-hover:rotate-0 group-hover:scale-100 group-hover:-mx-2">همه</strong>
+        <strong class="transition-all -rotate-6 scale-80 group-hover:rotate-0 group-hover:scale-100">قسمت ها</strong>
+      </a>
     </section>
   `,
 })
@@ -121,7 +139,7 @@ export class HomeComponent {
       title: 'پادکست رو با هوش مصنوعی مثل آدامس بجو',
       description: 'پادکست رو یک پادکست فارسی است که به بررسی و تحلیل هوش مصنوعی و کاربردهای آن در زندگی روزمره می‌پردازد.',
       keywords: ['پادکست', 'هوش مصنوعی', 'AI', 'فناوری', 'تکنولوژی', 'NotebookLM'],
-      image: '/logo.png',
+        image: 'https://adamscast.ir/logo.png',
       url: 'https://adamscast.ir',
       type: 'website',
       jsonLd: {
@@ -133,5 +151,14 @@ export class HomeComponent {
         url: 'https://adamscast.ir'
       }
     });
+  }
+
+  public scrollToBottom() {
+    if (typeof window != 'undefined') {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth',
+      })
+    }
   }
 }

@@ -20,6 +20,7 @@
 @layer components {
 
     .group:hover .group-hover\:text-primary,
+    .hover\:text-primary:hover,
     .text-primary {
         color: #929852;
     }
@@ -33,7 +34,7 @@
         background-color: #929852;
     }
 
-    .hover\:text-primary:hover,
+    .hover\:text-secondary:hover,
     .text-secondary {
         color: #262626;
     }

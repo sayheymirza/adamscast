@@ -1,14 +1,15 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CardEpisodeRowComponent } from '../components/card-episode-row.component';
 import { MindmapComponent } from "../components/mindmap/mindmap.component";
+import { SectionInfoComponent } from '../components/section-info.component';
 import { EpisodesService } from '../services/episodes.service';
 import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-episode',
-  imports: [NgOptimizedImage, CardEpisodeRowComponent, MindmapComponent],
+  imports: [NgOptimizedImage, CardEpisodeRowComponent, SectionInfoComponent, MindmapComponent, RouterLink],
   template: `
     @if(item) {
       <img 
@@ -47,7 +48,15 @@ import { SeoService } from '../services/seo.service';
           [item]="item"
         />
       }
+
+      <a routerLink="/episodes" class="text-primary group text-center flex items-center justify-center gap-4 mt-10">
+        <strong class="transition-all rotate-12 scale-105 group-hover:rotate-0 group-hover:scale-100">مشاهده</strong>
+        <strong class="transition-all rotate-6 scale-150 group-hover:rotate-0 group-hover:scale-100 group-hover:-mx-2">همه</strong>
+        <strong class="transition-all -rotate-6 scale-80 group-hover:rotate-0 group-hover:scale-100">قسمت ها</strong>
+      </a>
     </section>
+
+    <app-section-info class="container mx-auto my-10 px-10" />
     }
   `,
   host: {

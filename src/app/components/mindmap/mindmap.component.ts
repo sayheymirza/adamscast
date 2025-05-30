@@ -1,6 +1,7 @@
-import { Component, effect, input } from '@angular/core';
+import { Component, effect, inject, input, PLATFORM_ID } from '@angular/core';
 import { IMindmapNode } from '../../services/episodes.service';
 import getRender from './mindmap.script';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-mindmap',
@@ -14,6 +15,7 @@ import getRender from './mindmap.script';
 })
 export class MindmapComponent {
   public nodes = input.required<IMindmapNode>();
+  private platform = inject(PLATFORM_ID);
 
   constructor() {
     effect(() => {
@@ -24,10 +26,10 @@ export class MindmapComponent {
   }
 
   private render() {
-    setTimeout(() => {
+    if (isPlatformBrowser(this.platform)) {
       const container = document.getElementById('mindmap')!;
       const render = getRender(container);
       render(this.nodes());
-    }, 1000);
+    }
   }
 }

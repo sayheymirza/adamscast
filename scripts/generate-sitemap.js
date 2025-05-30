@@ -9,6 +9,8 @@ const baseUrl = 'https://adamscast.ir';
 const paths = [
     '/',
     '/donate',
+    '/about',
+    '/how',
     ...episodes.map(episode => {
         return `/episode/${episode.slug}`;
     })
