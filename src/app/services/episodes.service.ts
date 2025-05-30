@@ -18,12 +18,18 @@ export class EpisodesService {
   }
 }
 
+export interface IMindmapNode {
+  name: string;
+  children?: IMindmapNode[];
+}
+
 export interface IEpisode {
   episode: number
   title: string
   description: string
   thumbnail: string
   audio: string
+  mindmap?: IMindmapNode
   duration: string
   slug: string
 }

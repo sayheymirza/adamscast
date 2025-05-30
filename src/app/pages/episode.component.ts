@@ -1,13 +1,14 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, effect, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CardEpisodeRowComponent } from '../components/card-episode-row.component';
+import { MindmapComponent } from "../components/mindmap/mindmap.component";
 import { EpisodesService } from '../services/episodes.service';
 import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-episode',
-  imports: [NgOptimizedImage, CardEpisodeRowComponent],
+  imports: [NgOptimizedImage, CardEpisodeRowComponent, MindmapComponent],
   template: `
     @if(item) {
       <img 
@@ -30,6 +31,13 @@ import { SeoService } from '../services/seo.service';
         <source src="{{item.audio}}" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
+
+    @if(item.mindmap) {
+      <app-mindmap 
+        class="w-full max-w-2xl"
+        [nodes]="item.mindmap"
+      />
+    }
 
     <section class="container mx-auto my-20 px-10">
       <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-10">آخرین قسمت‌ها</h2>
