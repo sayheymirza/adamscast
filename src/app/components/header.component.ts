@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   imports: [NgOptimizedImage, RouterLink],
   template: `
     <nav class="container mx-auto flex items-center justify-between px-4 h-20">
-      <a routerLink="/" class="flex flex-nowrap items-center gap-2 group">
+      <a routerLink="/" class="flex flex-nowrap items-center md:gap-2 group -mr-4 md:mr-0">
         <img 
           ngSrc="logo.png" 
           alt="لوگوی آدامس کست" 

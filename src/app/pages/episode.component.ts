@@ -23,7 +23,7 @@ import { SeoService } from '../services/seo.service';
         {{item.title}}
       </h2>
 
-      <p class="text-lg md:text-xl text-secondary mb-10 w-1/2 text-center">
+      <p class="text-lg md:text-xl text-secondary mb-10 md:w-1/2 text-center">
         {{item.description}}
       </p>
 
@@ -40,7 +40,7 @@ import { SeoService } from '../services/seo.service';
       />
     }
 
-    <section class="container mx-auto my-20 px-10">
+    <section class="container mx-auto my-20 px-4 md:px-10">
       <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-10">آخرین قسمت‌ها</h2>
 
       @for (item of episodesService.latest; track $index) {
