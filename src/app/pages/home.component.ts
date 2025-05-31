@@ -18,7 +18,7 @@ import { SeoService } from '../services/seo.service';
     >
         @for (item of heroEpisodes; track $index) {
           <div
-            class="absolute"
+            class="absolute hidden lg:block"
             [ngStyle]="heroEpisodesStyles[$index]"
           >
             <app-card-episode 
@@ -63,7 +63,7 @@ import { SeoService } from '../services/seo.service';
 
     <app-section-info class="container mx-auto my-20 px-10" />
 
-    <section class="container mx-auto my-20 px-10">
+    <section class="container mx-auto my-20 px-4 md:px-10">
       <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-10">آخرین قسمت‌ها</h2>
 
       @for (item of episodesService.last(10); track $index) {

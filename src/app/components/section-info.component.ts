@@ -34,7 +34,7 @@ import { RouterLink } from '@angular/router';
       </a>
   `,
   host: {
-    class: 'grid sm:grid-cols-2 gap-10'
+    class: 'grid sm:grid-cols-2 gap-4 sm:gap-10'
   }
 })
 export class SectionInfoComponent {

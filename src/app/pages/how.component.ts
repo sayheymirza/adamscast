@@ -9,8 +9,8 @@ import { SeoService } from '../services/seo.service';
       چطور یه قسمت تولید می کنم ؟
     </h1>
 
-    <div class="flex flex-nowrap items-center gap-10 md:mx-10 lg:w-1/2 lg:mx-auto">
-      <strong class="text-9xl text-primary rotate-12">1</strong>
+    <div class="flex flex-nowrap md:items-center gap-4 md:gap-10 md:mx-10 lg:w-1/2 lg:mx-auto">
+      <strong class="h-fit text-5xl md:text-9xl text-primary rotate-12">1</strong>
 
       <div class="flex flex-col gap-2">
         <h2 class="text-3xl font-bold">در جستجو مطلب</h2>
@@ -25,7 +25,7 @@ import { SeoService } from '../services/seo.service';
       </div>
     </div>
 
-    <div class="flex flex-nowrap items-center gap-10 md:mx-10 lg:w-1/2 lg:mx-auto">
+    <div class="flex flex-nowrap md:items-center gap-4 md:gap-10 md:mx-10 lg:w-1/2 lg:mx-auto">
       <div class="flex flex-col gap-2">
         <h2 class="text-3xl font-bold">پادکست سازی با هوش مصنوعی</h2>
         
@@ -44,11 +44,11 @@ import { SeoService } from '../services/seo.service';
         </ul>
       </div>
 
-      <strong class="text-9xl text-primary -rotate-12">2</strong>
+      <strong class="h-fit text-5xl md:text-9xl text-primary -rotate-12">2</strong>
     </div>
 
-    <div class="flex flex-nowrap items-center gap-10 md:mx-10 lg:w-1/2 lg:mx-auto">
-      <strong class="text-9xl text-primary rotate-12">3</strong>
+    <div class="flex flex-nowrap md:items-center gap-4 md:gap-10 md:mx-10 lg:w-1/2 lg:mx-auto">
+      <strong class="h-fit text-5xl md:text-9xl text-primary rotate-12">3</strong>
 
       <div class="flex flex-col gap-2">
         <h2 class="text-3xl font-bold">تصویر بنداگشتی ساختن</h2>
@@ -61,7 +61,7 @@ import { SeoService } from '../services/seo.service';
       </div>
     </div>
 
-    <div class="flex flex-nowrap items-center gap-10 md:mx-10 lg:w-1/2 lg:mx-auto">
+    <div class="flex flex-nowrap md:items-center gap-4 md:gap-10 md:mx-10 lg:w-1/2 lg:mx-auto">
       <div class="flex flex-col gap-2">
         <h2 class="text-3xl font-bold">بررسی نتایج</h2>
         
@@ -75,12 +75,12 @@ import { SeoService } from '../services/seo.service';
         </p>
       </div>
 
-      <strong class="text-9xl text-primary -rotate-12">4</strong>
+      <strong class="h-fit text-5xl md:text-9xl text-primary -rotate-12">4</strong>
     </div>
 
 
-    <div class="flex flex-nowrap items-center gap-10 md:mx-10 lg:w-1/2 lg:mx-auto">
-      <strong class="text-9xl text-primary rotate-12">5</strong>
+    <div class="flex flex-nowrap md:items-center gap-4 md:gap-10 md:mx-10 lg:w-1/2 lg:mx-auto">
+      <strong class="h-fit text-5xl md:text-9xl text-primary rotate-12">5</strong>
 
       <div class="flex flex-col gap-2">
         <h2 class="text-3xl font-bold">انتشار می دهم</h2>
@@ -102,7 +102,7 @@ import { SeoService } from '../services/seo.service';
 
 
     <blockquote class="text-center font-bold text-xl">
-      شیر خشکی که خوردم نوش جونم
+      این بود تمام روند تولید هر قسمت از پادکست آدامس کست
     </blockquote>
   `,
   host: {

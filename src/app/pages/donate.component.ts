@@ -31,7 +31,7 @@ import { SeoService } from '../services/seo.service';
       </div>
     </section>
 
-    <section class="container mx-auto flex flex-col">
+    <section class="container mx-auto flex flex-col px-4 pb-10">
       <h2 class="mx-auto font-bold text-2xl mt-10 mb-4">شما ما رو حمایت کردید</h2>
 
       <div class="flex flex-col gap-4 md:mx-10 lg:w-1/2 lg:mx-auto">
