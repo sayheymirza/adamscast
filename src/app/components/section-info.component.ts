@@ -32,9 +32,24 @@ import { RouterLink } from '@angular/router';
         </h3>
         <p>چطور ما یه قسمت از پادکست رو تولید می کنید</p>
       </a>
+
+      <a href="https://forms.gle/Qp3a5v5VFmStueTg6" target="_blank" class="flex flex-col items-center gap-2 p-4 text-center group">
+        <img 
+          ngSrc="/images/feedback.png" alt="نظر و پیشنهادات شنوندگان آدامس کست"
+          width="165"
+          height="165"
+          class="mb-4 -rotate-6 transition-all group-hover:scale-150 group-hover:-rotate-12"
+        />
+        <h3 class="text-xl font-bold group-hover:text-primary">
+          ارتباط سازی کنید
+        </h3>
+        <p>
+          اگر نظر یا پیشنهاد و حتی درخواست یک قسمت ویژه دارید
+        </p>
+      </a>
   `,
   host: {
-    class: 'grid sm:grid-cols-2 gap-4 sm:gap-10'
+    class: 'grid sm:grid-cols-3 gap-4 sm:gap-10'
   }
 })
 export class SectionInfoComponent {

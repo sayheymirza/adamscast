@@ -6,10 +6,11 @@ import { MindmapComponent } from "../components/mindmap/mindmap.component";
 import { SectionInfoComponent } from '../components/section-info.component';
 import { EpisodesService } from '../services/episodes.service';
 import { SeoService } from '../services/seo.service';
+import { PlayerComponent } from "../components/player.component";
 
 @Component({
   selector: 'app-episode',
-  imports: [NgOptimizedImage, CardEpisodeRowComponent, SectionInfoComponent, MindmapComponent, RouterLink],
+  imports: [NgOptimizedImage, CardEpisodeRowComponent, SectionInfoComponent, MindmapComponent, RouterLink, PlayerComponent],
   template: `
     @if(item) {
       <img 
@@ -19,7 +20,7 @@ import { SeoService } from '../services/seo.service';
         priority
       />
 
-      <h2 class="text-3xl md:text-4xl font-bold text-secondary mt-10 mb-5">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary mt-10 mb-5 text-center">
         {{item.title}}
       </h2>
 
@@ -28,14 +29,20 @@ import { SeoService } from '../services/seo.service';
       </p>
 
       <!-- audio -->
-      <audio controls class="w-full max-w-2xl">
+      <!-- <audio controls class="w-full max-w-2xl">
         <source src="{{item.audio}}" type="audio/mpeg">
         Your browser does not support the audio element.
-      </audio>
+      </audio> -->
+
+      <app-player
+        class="w-[calc(100dvw-36px)] md:w-full md:max-w-2xl"
+        url="{{item.audio}}"
+        speakers="{{item.speakers}}"
+      />
 
     @if(item.mindmap) {
       <app-mindmap 
-        class="w-full max-w-2xl"
+        class="w-full max-w-2xl mx-4"
         [nodes]="item.mindmap"
       />
     }

@@ -18,6 +18,9 @@
 }
 
 @layer components {
+    .bg-base {
+        background-color: #FAF2DA;
+    }
 
     .group:hover .group-hover\:text-primary,
     .hover\:text-primary:hover,

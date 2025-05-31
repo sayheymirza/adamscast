@@ -33,6 +33,7 @@ export interface IEpisode {
   description: string
   thumbnail: string
   audio: string
+  speakers?: string
   mindmap?: IMindmapNode
   duration: string
   slug: string
