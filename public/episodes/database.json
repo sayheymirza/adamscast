@@ -139,5 +139,32 @@
             ]
         },
         "duration": "07:16"
+    },
+    {
+        "slug": "human-transformation-journey",
+        "episode": 5,
+        "title": "سفر پویای تحول انسانی",
+        "description": "در این قسمت به اتفاقات و فرایند هنگام تغییر و تحول انسانی هست می بپردازیم.",
+        "thumbnail": "/episodes/5/thumbnail.png",
+        "audio": "/episodes/5/audio.m4a",
+        "speakers": "/episodes/5/speakers.json",
+        "duration": "10:36",
+        "mindmap": {
+            "name": "فرآیند پویای تحول در انسان",
+            "children": [
+                {
+                    "name": "چشم انداز روانشناختی تغییر"
+                },
+                {
+                    "name": "عبور از مقاومت درونی"
+                },
+                {
+                    "name": "مغز در حال تغییر"
+                },
+                {
+                    "name": "اثربخشی تغییر"
+                }
+            ]
+        }
     }
 ]
