@@ -202,5 +202,38 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "modern-psychotherapy-approaches",
+        "episode": 7,
+        "title": "رویکرد های روان درمانی مدرن",
+        "description": "در این قسمت به مفاهیم کلیدی روان درمانی و انواع رویکرد ها روش های روان درمانی مدرن با طیف اهداف آن ها می پردازیم.",
+        "thumbnail": "/episodes/7/thumbnail.png",
+        "audio": "/episodes/7/audio.m4a",
+        "speakers": "/episodes/7/speakers.json",
+        "duration": "07:41",
+        "mindmap": {
+            "name": "راهنمای جامع روان درمانی",
+            "children": [
+                {
+                    "name": "مفاهیم کلیدی"
+                },
+                {
+                    "name": "تکامل تفکر روان درمان"
+                },
+                {
+                    "name": "روش های برجسته روان درمانی مدرن"
+                },
+                {
+                    "name": "عوامل مشترک موفقیت"
+                },
+                {
+                    "name": "طیف اهداف درمانی"
+                },
+                {
+                    "name": "نتیجه گیری"
+                }
+            ]
+        }
     }
 ]
