@@ -235,5 +235,32 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "existential-psychotherapy-part-one",
+        "episode": 8,
+        "title": "روان درمانی اگزیستانسیال",
+        "description": "در این قسمت به کتاب روان درمانی اگزیستانسیال اثر اروین یالوم می پردازیم. اگزیستانسیال یعنی چه ؟ او کیست ؟ چهار دغدغه غایی.",
+        "thumbnail": "/episodes/8/thumbnail.png",
+        "audio": "/episodes/8/audio.m4a",
+        "speakers": "/episodes/8/speakers.json",
+        "duration": "05:42",
+        "mindmap": {
+            "name": "روان درمانی اگزیستانسیال",
+            "children": [
+                {
+                    "name": "تعاریف و اصول"
+                },
+                {
+                    "name": "اروین یالوم : زندگی، آثار و نقش"
+                },
+                {
+                    "name": "چهار دغدغه غایی"
+                },
+                {
+                    "name": "نتیجه گیری"
+                }
+            ]
+        }
     }
 ]
