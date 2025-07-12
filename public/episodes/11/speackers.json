@@ -1,0 +1,157 @@
+[
+  {
+    "speaker_id": "female",
+    "start_time": 0.0,
+    "end_time": 38.5
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 38.5,
+    "end_time": 65.5
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 65.5,
+    "end_time": 67.0
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 67.0,
+    "end_time": 103.5
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 103.5,
+    "end_time": 117.5
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 117.5,
+    "end_time": 135.0
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 135.0,
+    "end_time": 140.0
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 140.0,
+    "end_time": 158.5
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 158.5,
+    "end_time": 162.5
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 162.5,
+    "end_time": 193.5
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 193.5,
+    "end_time": 206.0
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 206.0,
+    "end_time": 210.0
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 210.0,
+    "end_time": 227.0
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 227.0,
+    "end_time": 246.5
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 246.5,
+    "end_time": 262.0
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 262.0,
+    "end_time": 277.0
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 277.0,
+    "end_time": 279.5
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 279.5,
+    "end_time": 302.5
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 302.5,
+    "end_time": 306.0
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 306.0,
+    "end_time": 324.5
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 324.5,
+    "end_time": 339.0
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 339.0,
+    "end_time": 348.0
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 348.0,
+    "end_time": 350.0
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 350.0,
+    "end_time": 400.5
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 400.5,
+    "end_time": 406.5
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 406.5,
+    "end_time": 413.5
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 413.5,
+    "end_time": 429.5
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 429.5,
+    "end_time": 467.5
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 467.5,
+    "end_time": 471.5
+  },
+  {
+    "speaker_id": "male",
+    "start_time": 471.5,
+    "end_time": 473.0
+  },
+  {
+    "speaker_id": "female",
+    "start_time": 473.0,
+    "end_time": 507.0
+  }
+]

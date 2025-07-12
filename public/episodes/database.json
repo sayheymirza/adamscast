@@ -334,5 +334,41 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "existential-psychotherapy-part-four",
+        "episode": 11,
+        "title": "کالبدشکافی تنهایی",
+        "description": "تنهایی، تجربه‌ای جهان‌شمول و عمیقاً انسانی است که در تار و پود وجود ما تنیده شده است.",
+        "thumbnail": "/episodes/11/thumbnail.png",
+        "audio": "/episodes/11/audio.m4a",
+        "speakers": "/episodes/11/speakers.json",
+        "duration": "08:27",
+        "mindmap": {
+            "name": "کالبدشکافی تنهایی",
+            "children": [
+                {
+                    "name": "تعاریف و اهمیت"
+                },
+                {
+                    "name": "رویکرد های اصلی"
+                },
+                {
+                    "name": "دیدگاه اگزیستانسیال"
+                },
+                {
+                    "name": "دیدگاه روانکاوی"
+                },
+                {
+                    "name": "گفتگوی میان دیدگاه ها"
+                },
+                {
+                    "name": "پیامد های درمانی و اجتماعی"
+                },
+                {
+                    "name": "نتیجه گیری"
+                }
+            ]
+        }
     }
 ]
