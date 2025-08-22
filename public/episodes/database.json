@@ -370,5 +370,41 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "existential-psychotherapy-part-four",
+        "episode": 12,
+        "title": "قانون ۸۰/۲۰ برای بهره‌وری و موفقیت",
+        "description": "قانون ۸۰/۲۰، که به عنوان قانون پارتو نیز شناخته می‌شود، بیان می‌کند که ۸۰ درصد نتایج از ۲۰ درصد علل ناشی می‌شود.",
+        "thumbnail": "/episodes/12/thumbnail.png",
+        "audio": "/episodes/12/audio.m4a",
+        "speakers": "/episodes/12/speakers.json",
+        "duration": "23:16",
+        "mindmap": {
+            "name": "قانون ۸۰/۲۰",
+            "children": [
+                {
+                    "name": "مفهوم بنیادین"
+                },
+                {
+                    "name": "خاستگاه تاریخی"
+                },
+                {
+                    "name": "کاربردها"
+                },
+                {
+                    "name": "تحلیل دقیق و رفع سوتفاهم ها"
+                },
+                {
+                    "name": "محدودیت ها و انتقادات"
+                },
+                {
+                    "name": "استراتژی عملی پیاده سازی"
+                },
+                {
+                    "name": "نتیجه گیری"
+                }
+            ]
+        }
     }
 ]
