@@ -83,7 +83,7 @@ export class DonateComponent {
       image: '3.png',
       text: 'یه پیتزای خوشمزه',
       link: 'https://zarinp.al/554397',
-      price: '350.000 تومان',
+      price: '400.000 تومان',
     },
     {
       image: '4.png',
@@ -93,7 +93,7 @@ export class DonateComponent {
     },
     {
       image: '5.jpeg',
-      text: 'یه دلار آمریها',
+      text: 'یه دلار آمریکا',
       link: 'https://zarinp.al/554395',
       price: '110.000 تومان'
     },
@@ -101,13 +101,13 @@ export class DonateComponent {
       image: '1.png',
       text: 'یه شات اسپرسو',
       link: 'https://zarinp.al/554394',
-      price: '35.000 تومان',
+      price: '50.000 تومان',
     },
     {
       image: '2.png',
       text: 'بستنی عروسکی',
       link: 'https://zarinp.al/695491',
-      price: '12.000 تومان'
+      price: '20.000 تومان'
     },
     {
       image: '6.jpg',
