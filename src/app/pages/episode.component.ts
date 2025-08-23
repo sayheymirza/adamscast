@@ -14,7 +14,7 @@ import { PlayerComponent } from "../components/player.component";
   template: `
     @if(item) {
       <img 
-        ngSrc="{{item.thumbnail}}" alt="{{item.title}}" 
+        ngSrc="https://adamscast.ir/episodes/{{item.episode}}/thumbnail.png" alt="{{item.title}}" 
         width="256" height="256"
         class="object-cover object-center rotate-12"
         priority

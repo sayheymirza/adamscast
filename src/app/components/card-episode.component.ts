@@ -7,7 +7,7 @@ import { IEpisode } from '../services/episodes.service';
   imports: [NgOptimizedImage],
   template: `
     <img 
-      ngSrc="{{item().thumbnail}}" alt="{{item().title}}" 
+      ngSrc="https://adamscast.ir/episodes/{{item().episode}}/thumbnail.png" alt="{{item().title}}" 
       width="256" height="256"
       class="w-full h-auto object-cover object-center"
       priority

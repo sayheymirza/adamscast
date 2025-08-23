@@ -31,9 +31,6 @@ export interface IEpisode {
   episode: number
   title: string
   description: string
-  thumbnail: string
-  audio: string
-  speakers?: string
   mindmap?: IMindmapNode
   duration: string
   slug: string

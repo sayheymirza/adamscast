@@ -24,7 +24,7 @@ import { NgOptimizedImage } from '@angular/common';
           </div>
 
           <img 
-            ngSrc="{{item().thumbnail}}" alt="{{item().title}}" 
+            ngSrc="https://adamscast.ir/episodes/{{item().episode}}/thumbnail.png" alt="{{item().title}}" 
             width="128" height="128"
             class="object-cover object-center absolute left-20 -rotate-12 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all"
             priority

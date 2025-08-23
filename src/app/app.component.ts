@@ -3,11 +3,10 @@ import { Router, RouterOutlet } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
 import { FooterComponent } from "./components/footer.component";
 import { HeaderComponent } from "./components/header.component";
-import { PlayerComponent } from "./components/player.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, PlayerComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   template: `
     <app-header />
     <router-outlet />
