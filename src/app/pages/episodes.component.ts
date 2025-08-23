@@ -10,7 +10,7 @@ import { SectionInfoComponent } from "../components/section-info.component";
   template: `
     <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-10">همه قسمت ها</h2>
 
-    @for (item of episodesService.latest; track $index) {
+    @for (item of episodesService.items; track $index) {
       <app-card-episode-row 
         [item]="item"
       />
