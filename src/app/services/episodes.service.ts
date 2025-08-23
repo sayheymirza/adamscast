@@ -37,4 +37,5 @@ export interface IEpisode {
   mindmap?: IMindmapNode
   duration: string
   slug: string
+  lazy?: boolean
 }
