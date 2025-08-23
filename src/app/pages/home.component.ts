@@ -23,13 +23,13 @@ import { SeoService } from '../services/seo.service';
           >
             <app-card-episode 
               [item]="item"
-              class="w-[128px] h-[128px] md:w-[256px] md:h-[256px] transition-all hover:scale-110"
+              class="w-[128px] h-[128px] md:w-[256px] md:h-[256px] transition-all hover:scale-110 opacity-75 hover:opacity-100"
             />
           </div>
         }
 
       <div class="flex flex-col items-center text-center gap-20 z-1">
-        <h1 class="flex flex-col gap-4 whitespace-pre text-5xl sm:text-6xl md:text-8xl font-bold text-secondary">
+        <h1 class="flex flex-col gap-4 whitespace-pre text-5xl sm:text-6xl md:text-8xl font-bold text-secondary text-stroke">
           <span>پادکست رو</span>
           <span>با هوش مصنوعی</span>
           <span class="text-primary">مثل آدامس بجو</span>
