@@ -87,34 +87,28 @@ export class PlayerComponent {
 
   private wavesurfer: WaveSurfer | null = null;
 
-  private _url: string | null = null;
-  private _speakers: string | null = null;
   private speakersObject: ISpeakerObject[] = [];
 
-  @Input()
-  public set url(value: string | null) {
-    this._url = value;
-
-    if (value) {
-      this.initWaveSurfer(value);
-    }
-  }
+  private _episode: number = 0;
 
   @Input()
-  public set speakers(value: string | null) {
-    this._speakers = value;
+  public set episode(value: number) {
+    this._episode = value;
 
-    if (value) {
-      this.initSpeakers(value);
-    } else {
-      this.speakersObject = [];
-    }
+    this.init(value);
   }
 
   @Input()
   public reload: boolean = false;
 
+  @Input()
+  public lazy: boolean = false;
+
   public get host(): HTMLElement | null {
+    if (isPlatformServer(this.platformId)) {
+      return null;
+    }
+
     const elem = this.wavesurferElem();
     if (elem) {
       return elem.nativeElement.parentElement?.parentElement || null;
@@ -136,12 +130,6 @@ export class PlayerComponent {
 
   ngAfterViewInit() {
     if (isPlatformServer(this.platformId)) return;
-
-    if (!this._url && this.reload == true) {
-      setTimeout(() => {
-        this.initFromLocalStorage();
-      }, 0);
-    }
   }
 
   public formatTime(seconds: number): string {
@@ -189,6 +177,21 @@ export class PlayerComponent {
     }
   }
 
+  private async init(episode: number) {
+    if (isPlatformServer(this.platformId)) {
+      return;
+    }
+
+    const url = `${window.location.origin}/episodes/${episode}`;
+
+    const [_, peaks] = await Promise.all([
+      this.initSpeakers(`${url}/speakers.json`),
+      this.initPeaks(`${url}/wavesurfer.json`),
+    ]);
+
+    await this.initWaveSurfer(`${url}/audio.m4a`, peaks);
+  }
+
   private async initSpeakers(url: string) {
     if (isPlatformServer(this.platformId)) {
       return;
@@ -205,27 +208,26 @@ export class PlayerComponent {
     }
   }
 
-  private initFromLocalStorage() {
-    // load from localStorage
-    const playingData = localStorage.getItem('#adamscast/playing');
-    if (playingData) {
-      const data = JSON.parse(playingData);
-      this._url = data.url;
-      this._speakers = data.speakers || null;
-
-      this.initWaveSurfer(this._url!);
-      this.initSpeakers(this._speakers || '');
-
-      if (this.wavesurfer) {
-        this.wavesurfer.on('ready', () => {
-          this.wavesurfer!.seekTo(data.time / this.wavesurfer!.getDuration());
-          this.changeHostGender();
-        });
+  private async initPeaks(url: string): Promise<number[][] | undefined> {
+    try {
+      if (isPlatformServer(this.platformId)) {
+        return undefined;
       }
+
+      const response = await fetch(url);
+
+      if (response.status.toString().startsWith('20')) {
+        const json = await response.json();
+        return json;
+      }
+
+      return undefined;
+    } catch (error) {
+      return undefined;
     }
   }
 
-  private initWaveSurfer(url: string) {
+  private async initWaveSurfer(url: string, peaks?: number[][]) {
     if (isPlatformServer(this.platformId)) {
       return;
     }
@@ -241,6 +243,10 @@ export class PlayerComponent {
       return;
     }
 
+    if (this.lazy) {
+      this.host!.classList.remove('hidden');
+    }
+
     this.wavesurfer = WaveSurfer.create({
       container: wavesurferElem.nativeElement,
       waveColor: '#DFD7C3',
@@ -249,10 +255,9 @@ export class PlayerComponent {
       barWidth: 2,
       height: 40,
       width: "auto",
-      backend: 'WebAudio',
+      backend: 'MediaElement',
+      peaks: peaks,
     });
-
-    this.wavesurfer.load(url);
 
     this.wavesurfer.on('ready', () => {
       this.host!.classList.remove('hidden');
@@ -263,18 +268,19 @@ export class PlayerComponent {
       const currentTime = parseFloat(this.wavesurfer!.getCurrentTime().toFixed(2));
       const speaker = this.speakersObject.find(s => s.start_time <= currentTime && s.end_time >= currentTime);
 
-      localStorage.setItem('#adamscast/playing', JSON.stringify({
-        url: this._url,
-        speakers: this._speakers,
-        time: currentTime,
-      }));
-
       if (speaker && this.playing) {
         this.changeHostGender(speaker.speaker_id);
       } else {
         this.changeHostGender();
       }
     });
+
+    await this.wavesurfer.load(url, peaks);
+
+    const blob = new Blob([JSON.stringify(this.wavesurfer.exportPeaks())], { type: 'application/json' });
+    const blobUrl = URL.createObjectURL(blob);
+
+    console.log(`Wavesurfer exported as blob:`, blobUrl);
   }
 
   private changeHostGender(gender?: 'male' | 'female') {

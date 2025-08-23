@@ -36,8 +36,8 @@ import { PlayerComponent } from "../components/player.component";
 
       <app-player
         class="w-[calc(100dvw-36px)] md:w-full md:max-w-2xl"
-        url="{{item.audio}}"
-        speakers="{{item.speakers}}"
+        [episode]="item.episode"
+        [lazy]="item.lazy == true"
       />
 
     @if(item.mindmap) {
@@ -76,6 +76,7 @@ export class EpisodeComponent {
   private seoService = inject(SeoService);
 
   public item: any;
+  public peaks?: number[][];
 
   constructor() {
     this.activatedRoute.params.subscribe((params) => {
